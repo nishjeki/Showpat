@@ -2,7 +2,7 @@
 
 using Xamarin.Forms;
 
-namespace Showpat.Forms
+namespace ShowPat.Forms
 {
 	public class App : Application
 	{

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using Xamarin.Forms;
 
-namespace Showpat.Forms
+namespace ShowPat.Forms
 {
 	public partial class MainPage : ContentPage
 	{

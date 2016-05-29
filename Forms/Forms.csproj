@@ -6,8 +6,8 @@
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <ProjectGuid>{EF3FA987-B578-4E67-A810-9C84C644DAC7}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Showpat.Forms</RootNamespace>
-    <AssemblyName>Showpat</AssemblyName>
+    <RootNamespace>ShowPat.Forms</RootNamespace>
+    <AssemblyName>ShowPat</AssemblyName>
     <TargetFrameworkProfile>Profile78</TargetFrameworkProfile>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>

@@ -8,7 +8,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 
-namespace Showpat.Forms.Droid
+namespace ShowPat.Forms.Droid
 {
 	[Activity (Label = "Forms.Droid", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
 	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity

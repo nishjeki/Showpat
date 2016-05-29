@@ -11,7 +11,7 @@
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Showpat" expanded="True">
+          <Node name="ShowPat" expanded="True">
             <Node name="Forms" expanded="True" selected="True">
               <Node name="Views" expanded="True">
                 <Node name="MainPage.xaml" expanded="True" />
@@ -28,8 +28,8 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <DisabledProjects>
-    <String>Showpat.Forms/Showpat.Forms.csproj</String>
-    <String>Droid/Showpat.Forms.Droid.csproj</String>
-    <String>iOS/Showpat.Forms.iOS.csproj</String>
+    <String>ShowPat.Forms/ShowPat.Forms.csproj</String>
+    <String>Droid/ShowPat.Forms.Droid.csproj</String>
+    <String>iOS/ShowPat.Forms.iOS.csproj</String>
   </DisabledProjects>
 </Properties>

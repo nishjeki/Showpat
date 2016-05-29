@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace Showpat.Forms.iOS
+namespace ShowPat.Forms.iOS
 {
 	public class Application
 	{
