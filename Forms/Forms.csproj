@@ -32,6 +32,7 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DailyMotion.cs" />
     <Compile Include="SearchResultVM.cs" />
     <Compile Include="Forms.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

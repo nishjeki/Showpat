@@ -34,10 +34,12 @@ namespace ShowPat.Forms
             _searchResultsVM = new ObservableCollection<SearchResultVM>();
         }
 
-        internal void Search()
+        internal async void Search()
         {
-            YouTube youTube = new YouTube();
-            List<SearchResultVM> searchResultsVM = youTube.Search(SearchText);
+            //YouTube youTube = new YouTube();
+            //List<SearchResultVM> searchResultsVM = youTube.Search(SearchText);
+            DailyMotion dailyMotion = new DailyMotion();
+            List<SearchResultVM> searchResultsVM = await dailyMotion.Search(SearchText);
             foreach (SearchResultVM searchResultVM in searchResultsVM)
             {
                 SearchResultsVM.Add(searchResultVM);
