@@ -20,18 +20,18 @@ namespace ShowPat.Forms
             set { if (_searchText != value) { _searchText = value; RaisePropertyChanged("SearchText"); } }
         }
 
-        private ObservableCollection<SearchResultVM> _searchResultsVM;
-        public ObservableCollection<SearchResultVM> SearchResultsVM
+		private ObservableCollection<VideoViewModel> _videoViewModels;
+		public ObservableCollection<VideoViewModel> VideoViewModels
         {
             get
             {
-                return _searchResultsVM;
+                return _videoViewModels;
             }
         }
 
         public MainPageVM()
         {
-            _searchResultsVM = new ObservableCollection<SearchResultVM>();
+			_videoViewModels = new ObservableCollection<VideoViewModel>();
         }
 
         internal async void Search()
@@ -39,10 +39,10 @@ namespace ShowPat.Forms
             //YouTube youTube = new YouTube();
             //List<SearchResultVM> searchResultsVM = youTube.Search(SearchText);
             DailyMotion dailyMotion = new DailyMotion();
-            List<SearchResultVM> searchResultsVM = await dailyMotion.Search(SearchText);
-            foreach (SearchResultVM searchResultVM in searchResultsVM)
+			List<VideoViewModel> videoViewModels = await dailyMotion.Search(SearchText);
+			foreach (VideoViewModel videoViewModel in videoViewModels)
             {
-                SearchResultsVM.Add(searchResultVM);
+				VideoViewModels.Add(videoViewModel);
             }
         }
     }

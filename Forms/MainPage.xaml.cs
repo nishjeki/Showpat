@@ -17,7 +17,7 @@ namespace ShowPat.Forms
 
         public void SearchButtonPressed(object sender, EventArgs e)
         {
-            _mainPageVM.SearchResultsVM.Clear();
+            _mainPageVM.VideoViewModels.Clear();
             _mainPageVM.Search();
         }
     }

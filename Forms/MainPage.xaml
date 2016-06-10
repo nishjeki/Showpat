@@ -4,7 +4,7 @@
     <StackLayout VerticalOptions="Start">
       <Label Text="ShowPat" FontSize="20" HorizontalOptions="CenterAndExpand"/>
       <SearchBar x:Name="searchBar" Text="{Binding SearchText}" Placeholder="Enter search term" SearchButtonPressed="SearchButtonPressed"/>
-      <ListView x:Name="listView" ItemsSource="{Binding Path=SearchResultsVM}">
+      <ListView x:Name="listView" ItemsSource="{Binding Path=VideoViewModels}">
         <ListView.ItemTemplate>
           <DataTemplate>
             <ViewCell>

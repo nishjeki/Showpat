@@ -9,7 +9,7 @@ namespace ShowPat.Forms
     /// </summary>
     internal class YouTube
     {
-        public List<SearchResultVM> Search(string searchTerm)
+        public List<VideoViewModel> Search(string searchTerm)
         {
             var youtubeService = new YouTubeService(new BaseClientService.Initializer()
             {
@@ -24,17 +24,17 @@ namespace ShowPat.Forms
             // Call the search.list method to retrieve results matching the specified query term.
             var searchListResponse = searchListRequest.Execute();
 
-            List<SearchResultVM> searchResultsVM = new List<SearchResultVM>();
+			List<VideoViewModel> videoViewModels = new List<VideoViewModel>();
 
             foreach (var searchResult in searchListResponse.Items)
             {
-                SearchResultVM searchResultVM = new SearchResultVM();
-                searchResultVM.Title = searchResult.Snippet.Title;
-                searchResultVM.Description = searchResult.Snippet.Description;
-                searchResultsVM.Add(searchResultVM);
+				VideoViewModel videoViewModel = new VideoViewModel();
+                videoViewModel.Title = searchResult.Snippet.Title;
+                videoViewModel.Description = searchResult.Snippet.Description;
+                videoViewModels.Add(videoViewModel);
             }
 
-            return searchResultsVM;
+            return videoViewModels;
         }
     }
 }
