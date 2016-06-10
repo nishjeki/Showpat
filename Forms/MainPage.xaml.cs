@@ -20,14 +20,22 @@ namespace ShowPat.Forms
 			_mainPageViewModel.SearchDailyMotion();
         }
 
+		public void SearchBarTextChanged(object sender, EventArgs e)
+		{
+			if (string.IsNullOrEmpty(searchBar.Text))
+				_mainPageViewModel.VideoViewModels.Clear ();
+		}
+
 		public void YouTubeButtonClicked(object sender, EventArgs e)
 		{
-			_mainPageViewModel.SearchYouTube();
+			if(!string.IsNullOrEmpty(searchBar.Text))
+				_mainPageViewModel.SearchYouTube();
 		}
 
 		public void DailyMotionButtonClicked(object sender, EventArgs e)
 		{
-			_mainPageViewModel.SearchDailyMotion();
+			if(!string.IsNullOrEmpty(searchBar.Text))
+				_mainPageViewModel.SearchDailyMotion();
 		}
     }
 }
