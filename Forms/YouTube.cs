@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Google.Apis.Services;
 using Google.Apis.YouTube.v3;
+using System.Threading.Tasks;
 
 namespace ShowPat.Forms
 {
@@ -9,20 +10,19 @@ namespace ShowPat.Forms
     /// </summary>
     internal class YouTube
     {
-        public List<VideoViewModel> Search(string searchTerm)
+        public async Task<List<VideoViewModel>> Search(string searchTerm)
         {
             var youtubeService = new YouTubeService(new BaseClientService.Initializer()
             {
-                ApiKey = "REPLACE_ME_WITH_YOUR_YOUTUBE_KEY",
+				ApiKey = "REPLACE_ME_WITH_YOUR_YOUTUBE_KEY",
                 ApplicationName = this.GetType().ToString()
             });
 
             var searchListRequest = youtubeService.Search.List("snippet");
             searchListRequest.Q = searchTerm;
-            searchListRequest.MaxResults = 5;
+            searchListRequest.MaxResults = 10;
 
-            // Call the search.list method to retrieve results matching the specified query term.
-            var searchListResponse = searchListRequest.Execute();
+            var searchListResponse = await searchListRequest.ExecuteAsync();
 
 			List<VideoViewModel> videoViewModels = new List<VideoViewModel>();
 

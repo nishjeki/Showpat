@@ -17,9 +17,18 @@ namespace ShowPat.Forms
 
         public void SearchButtonPressed(object sender, EventArgs e)
         {
-            _mainPageViewModel.VideoViewModels.Clear();
-            _mainPageViewModel.Search();
+			_mainPageViewModel.SearchDailyMotion();
         }
+
+		public void YouTubeButtonClicked(object sender, EventArgs e)
+		{
+			_mainPageViewModel.SearchYouTube();
+		}
+
+		public void DailyMotionButtonClicked(object sender, EventArgs e)
+		{
+			_mainPageViewModel.SearchDailyMotion();
+		}
     }
 }
 
