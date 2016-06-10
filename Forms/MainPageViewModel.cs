@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 
 namespace ShowPat.Forms
 {
-    class MainPageVM : INotifyPropertyChanged
+    class MainPageViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -29,7 +29,7 @@ namespace ShowPat.Forms
             }
         }
 
-        public MainPageVM()
+        public MainPageViewModel()
         {
 			_videoViewModels = new ObservableCollection<VideoViewModel>();
         }

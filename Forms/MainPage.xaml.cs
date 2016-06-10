@@ -6,19 +6,19 @@ namespace ShowPat.Forms
 {
     public partial class MainPage : ContentPage
 	{
-        MainPageVM _mainPageVM;
+        MainPageViewModel _mainPageViewModel;
 
 		public MainPage ()
 		{
 			InitializeComponent ();
-            _mainPageVM = new MainPageVM();
-            this.BindingContext = _mainPageVM;
+            _mainPageViewModel = new MainPageViewModel();
+            this.BindingContext = _mainPageViewModel;
 		}
 
         public void SearchButtonPressed(object sender, EventArgs e)
         {
-            _mainPageVM.VideoViewModels.Clear();
-            _mainPageVM.Search();
+            _mainPageViewModel.VideoViewModels.Clear();
+            _mainPageViewModel.Search();
         }
     }
 }
