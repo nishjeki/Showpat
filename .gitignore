@@ -5,3 +5,6 @@ packages/
 *.userprefs
 *.user
 UWP/project.lock.json
+.vs/
+UWP/project.lock.json
+UWP/ShowPat.Forms.UWP_TemporaryKey.pfx
