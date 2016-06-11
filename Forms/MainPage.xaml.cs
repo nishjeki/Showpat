@@ -37,6 +37,12 @@ namespace ShowPat.Forms
 			if(!string.IsNullOrEmpty(searchBar.Text))
 				_mainPageViewModel.SearchDailyMotion();
 		}
+
+		public void VimeoButtonClicked(object sender, EventArgs e)
+		{
+			if(!string.IsNullOrEmpty(searchBar.Text))
+				_mainPageViewModel.SearchVimeo();
+		}
     }
 }
 

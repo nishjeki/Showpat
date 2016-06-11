@@ -8,6 +8,7 @@
 				<StackLayout Orientation="Horizontal">
 					<Button x:Name="YouTubeButton" Text="YouTube" Clicked="YouTubeButtonClicked"/>
 					<Button x:Name="DailyMotionButton" Text="DailyMotion" Clicked="DailyMotionButtonClicked"/>
+					<Button x:Name="VimeoButton" Text="Vimeo" Clicked="VimeoButtonClicked"/>
 				</StackLayout>
 			</ScrollView>
 			<ListView x:Name="listView" ItemsSource="{Binding Path=VideoViewModels}">

@@ -10,7 +10,7 @@ namespace ShowPat.Forms
     /// </summary>
     internal class YouTube
     {
-        public async Task<List<VideoViewModel>> Search(string searchTerm)
+        public async Task<List<VideoViewModel>> Search(string searchText)
         {
             var youtubeService = new YouTubeService(new BaseClientService.Initializer()
             {
@@ -19,7 +19,7 @@ namespace ShowPat.Forms
             });
 
             var searchListRequest = youtubeService.Search.List("snippet");
-            searchListRequest.Q = searchTerm;
+            searchListRequest.Q = searchText;
             searchListRequest.MaxResults = 10;
 
             var searchListResponse = await searchListRequest.ExecuteAsync();

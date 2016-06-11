@@ -34,6 +34,18 @@ namespace ShowPat.Forms
 			_videoViewModels = new ObservableCollection<VideoViewModel>();
         }
 
+		internal async void SearchYouTube()
+		{
+			_videoViewModels.Clear ();
+
+			YouTube youTube = new YouTube();
+			List<VideoViewModel> videoViewModels = await youTube.Search(SearchText);
+			foreach (VideoViewModel videoViewModel in videoViewModels)
+			{
+				VideoViewModels.Add(videoViewModel);
+			}
+		}
+
         internal async void SearchDailyMotion()
         {
 			_videoViewModels.Clear ();
@@ -46,12 +58,12 @@ namespace ShowPat.Forms
             }
         }
 
-		internal async void SearchYouTube()
+		internal async void SearchVimeo()
 		{
 			_videoViewModels.Clear ();
 
-			YouTube youTube = new YouTube();
-			List<VideoViewModel> videoViewModels = await youTube.Search(SearchText);
+			Vimeo vimeo = new Vimeo();
+			List<VideoViewModel> videoViewModels = await vimeo.Search(SearchText);
 			foreach (VideoViewModel videoViewModel in videoViewModels)
 			{
 				VideoViewModels.Add(videoViewModel);

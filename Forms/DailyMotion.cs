@@ -13,9 +13,9 @@ namespace ShowPat.Forms
 {
     class DailyMotion
     {
-		public async Task<List<VideoViewModel>> Search(string searchTerm)
+		public async Task<List<VideoViewModel>> Search(string searchText)
         {
-            HttpWebRequest request = WebRequest.Create("https://api.dailymotion.com/videos?fields=title,description&search="+searchTerm) as HttpWebRequest;
+            HttpWebRequest request = WebRequest.Create("https://api.dailymotion.com/videos?fields=title,description&search="+searchText) as HttpWebRequest;
 
             using (HttpWebResponse response = await request.GetResponseAsync() as HttpWebResponse)
             {
