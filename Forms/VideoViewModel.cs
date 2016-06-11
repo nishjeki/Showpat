@@ -2,7 +2,7 @@
 
 namespace ShowPat.Forms
 {
-    class SearchResultVM : INotifyPropertyChanged
+    class VideoViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

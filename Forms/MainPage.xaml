@@ -1,20 +1,27 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ShowPat.Forms.MainPage">
-  <ContentPage.Content>
-    <StackLayout VerticalOptions="Start">
-      <Label Text="ShowPat" FontSize="20" HorizontalOptions="CenterAndExpand"/>
-      <SearchBar x:Name="searchBar" Text="{Binding SearchText}" Placeholder="Enter search term" SearchButtonPressed="SearchButtonPressed"/>
-      <ListView x:Name="listView" ItemsSource="{Binding Path=SearchResultsVM}">
-        <ListView.ItemTemplate>
-          <DataTemplate>
-            <ViewCell>
-              <StackLayout>
-                <Label Text="{Binding Title}"/>
-              </StackLayout>
-            </ViewCell>
-          </DataTemplate>
-        </ListView.ItemTemplate>
-      </ListView>
-    </StackLayout>
-  </ContentPage.Content>
+	<ContentPage.Content>
+		<StackLayout VerticalOptions="Start">
+			<Label Text="ShowPat" FontSize="20" HorizontalOptions="CenterAndExpand" />
+			<SearchBar x:Name="searchBar" Text="{Binding SearchText}" Placeholder="Enter search term" SearchButtonPressed="SearchButtonPressed" TextChanged="SearchBarTextChanged"/>
+			<ScrollView>
+				<StackLayout Orientation="Horizontal">
+					<Button x:Name="YouTubeButton" Text="YouTube" Clicked="YouTubeButtonClicked"/>
+					<Button x:Name="DailyMotionButton" Text="DailyMotion" Clicked="DailyMotionButtonClicked"/>
+					<Button x:Name="VimeoButton" Text="Vimeo" Clicked="VimeoButtonClicked"/>
+				</StackLayout>
+			</ScrollView>
+			<ListView x:Name="listView" ItemsSource="{Binding Path=VideoViewModels}">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<StackLayout>
+								<Label Text="{Binding Title}" />
+							</StackLayout>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+		</StackLayout>
+	</ContentPage.Content>
 </ContentPage>

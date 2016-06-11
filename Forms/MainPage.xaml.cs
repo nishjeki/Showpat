@@ -6,20 +6,43 @@ namespace ShowPat.Forms
 {
     public partial class MainPage : ContentPage
 	{
-        MainPageVM _mainPageVM;
+        MainPageViewModel _mainPageViewModel;
 
 		public MainPage ()
 		{
 			InitializeComponent ();
-            _mainPageVM = new MainPageVM();
-            this.BindingContext = _mainPageVM;
+            _mainPageViewModel = new MainPageViewModel();
+            this.BindingContext = _mainPageViewModel;
 		}
 
         public void SearchButtonPressed(object sender, EventArgs e)
         {
-            _mainPageVM.SearchResultsVM.Clear();
-            _mainPageVM.Search();
+			_mainPageViewModel.SearchDailyMotion();
         }
+
+		public void SearchBarTextChanged(object sender, EventArgs e)
+		{
+			if (string.IsNullOrEmpty(searchBar.Text))
+				_mainPageViewModel.VideoViewModels.Clear ();
+		}
+
+		public void YouTubeButtonClicked(object sender, EventArgs e)
+		{
+			if(!string.IsNullOrEmpty(searchBar.Text))
+				_mainPageViewModel.SearchYouTube();
+		}
+
+		public void DailyMotionButtonClicked(object sender, EventArgs e)
+		{
+			if(!string.IsNullOrEmpty(searchBar.Text))
+				_mainPageViewModel.SearchDailyMotion();
+		}
+
+		public void VimeoButtonClicked(object sender, EventArgs e)
+		{
+			if(!string.IsNullOrEmpty(searchBar.Text))
+				_mainPageViewModel.SearchVimeo();
+		}
     }
 }
 
