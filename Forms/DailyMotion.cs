@@ -15,7 +15,7 @@ namespace ShowPat.Forms
     {
 		public async Task<List<VideoViewModel>> Search(string searchText)
         {
-            HttpWebRequest request = WebRequest.Create("https://api.dailymotion.com/videos?fields=title,description&search="+searchText) as HttpWebRequest;
+            HttpWebRequest request = WebRequest.Create("https://api.dailymotion.com/videos?fields=id,title,description&search="+searchText) as HttpWebRequest;
 
             using (HttpWebResponse response = await request.GetResponseAsync() as HttpWebResponse)
             {
@@ -31,6 +31,8 @@ namespace ShowPat.Forms
 					VideoViewModel videoViewModel = new VideoViewModel();
 					dynamic title = video["title"];
 					videoViewModel.Title = title.Value;
+                    dynamic id = video["id"];
+                    videoViewModel.Url = "http://www.dailymotion.com/video/" + id.Value;
                     videoViewModels.Add(videoViewModel);
                 }
 

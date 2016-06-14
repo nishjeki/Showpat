@@ -28,6 +28,8 @@ namespace ShowPat.Forms
 					VideoViewModel videoViewModel = new VideoViewModel();
 					dynamic title = video["name"];
 					videoViewModel.Title = title.Value;
+                    dynamic url = video["link"];
+                    videoViewModel.Url = url.Value;
 					videoViewModels.Add(videoViewModel);
 				}
 

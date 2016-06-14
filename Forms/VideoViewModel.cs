@@ -40,5 +40,20 @@ namespace ShowPat.Forms
                 RaisePropertyChanged("Description");
             }
         }
+
+        private string _url;
+        public string Url
+        {
+            get
+            {
+                return _url;
+            }
+
+            set
+            {
+                _url = value;
+                RaisePropertyChanged("Url");
+            }
+        }
     }
 }

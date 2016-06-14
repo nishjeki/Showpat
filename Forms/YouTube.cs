@@ -31,6 +31,7 @@ namespace ShowPat.Forms
 				VideoViewModel videoViewModel = new VideoViewModel();
                 videoViewModel.Title = searchResult.Snippet.Title;
                 videoViewModel.Description = searchResult.Snippet.Description;
+                videoViewModel.Url = "https://www.youtube.com/watch?v=" + searchResult.Id.VideoId;
                 videoViewModels.Add(videoViewModel);
             }
 
