@@ -1,14 +1,31 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
+using Xamarin.Forms;
 
 namespace ShowPat.Forms
 {
-    class VideoViewModel : INotifyPropertyChanged
+    public class VideoViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void RaisePropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private Host _host;
+        public Host Host
+        {
+            get
+            {
+                return _host;
+            }
+
+            set
+            {
+                _host = value;
+                RaisePropertyChanged("Host");
+            }
         }
 
         private string _title;
@@ -41,19 +58,27 @@ namespace ShowPat.Forms
             }
         }
 
-        private string _url;
-        public string Url
+        private string _videoID;
+        public string VideoID
         {
             get
             {
-                return _url;
+                return _videoID;
             }
 
             set
             {
-                _url = value;
-                RaisePropertyChanged("Url");
+                _videoID = value;
+                RaisePropertyChanged("VideoID");
             }
+        }
+
+        internal Uri GetEmbedUri()
+        {
+            if (Host == Host.YouTube)
+                return new YouTube().GetEmbedUri(this);
+            else
+                throw new NotImplementedException();
         }
     }
 }

@@ -2,6 +2,7 @@
 using Google.Apis.Services;
 using Google.Apis.YouTube.v3;
 using System.Threading.Tasks;
+using System;
 
 namespace ShowPat.Forms
 {
@@ -29,13 +30,22 @@ namespace ShowPat.Forms
             foreach (var searchResult in searchListResponse.Items)
             {
 				VideoViewModel videoViewModel = new VideoViewModel();
+                videoViewModel.Host = Host.YouTube;
                 videoViewModel.Title = searchResult.Snippet.Title;
                 videoViewModel.Description = searchResult.Snippet.Description;
-                videoViewModel.Url = "https://www.youtube.com/watch?v=" + searchResult.Id.VideoId;
+                videoViewModel.VideoID = searchResult.Id.VideoId;
                 videoViewModels.Add(videoViewModel);
             }
 
             return videoViewModels;
+        }
+
+        public Uri GetEmbedUri(VideoViewModel videoViewModel, bool autoPlay = true)
+        {
+            string uriString = "http://www.youtube.com/embed/" + videoViewModel.VideoID;
+            uriString += "?&rel=0&autoplay=" + ((autoPlay) ? "1" : "0");
+            Uri uri = new Uri(uriString);
+            return uri;
         }
     }
 }

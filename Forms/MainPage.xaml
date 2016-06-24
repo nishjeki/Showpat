@@ -11,7 +11,7 @@
 					<Button x:Name="VimeoButton" Text="Vimeo" Clicked="VimeoButtonClicked"/>
 				</StackLayout>
 			</ScrollView>
-			<ListView x:Name="listView" ItemsSource="{Binding Path=VideoViewModels}">
+			<ListView x:Name="listView" ItemsSource="{Binding Path=VideoViewModels}" ItemTapped="OnItemTapped">
 				<ListView.ItemTemplate>
 					<DataTemplate>
 						<ViewCell>

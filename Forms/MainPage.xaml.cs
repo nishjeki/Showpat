@@ -43,6 +43,14 @@ namespace ShowPat.Forms
 			if(!string.IsNullOrEmpty(searchBar.Text))
 				_mainPageViewModel.SearchVimeo();
 		}
+
+        public void OnItemTapped(object sender, EventArgs e)
+        {
+            ItemTappedEventArgs itemTappedEventArgs = e as ItemTappedEventArgs;
+            VideoViewModel videoViewModel = itemTappedEventArgs.Item as VideoViewModel;
+            WebPlayerPage playerPage = new WebPlayerPage(videoViewModel);
+            Navigation.PushAsync(playerPage);
+        }
     }
 }
 

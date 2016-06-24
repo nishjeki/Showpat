@@ -29,7 +29,8 @@ namespace ShowPat.Forms
 					dynamic title = video["name"];
 					videoViewModel.Title = title.Value;
                     dynamic url = video["link"];
-                    videoViewModel.Url = url.Value;
+                    videoViewModel.VideoID = url.Value;
+                    videoViewModel.Host = Host.Vimeo;
 					videoViewModels.Add(videoViewModel);
 				}
 

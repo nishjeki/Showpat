@@ -32,7 +32,8 @@ namespace ShowPat.Forms
 					dynamic title = video["title"];
 					videoViewModel.Title = title.Value;
                     dynamic id = video["id"];
-                    videoViewModel.Url = "http://www.dailymotion.com/video/" + id.Value;
+                    videoViewModel.VideoID = id.Value;
+                    videoViewModel.Host = Host.DailyMotion;
                     videoViewModels.Add(videoViewModel);
                 }
 
