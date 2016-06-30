@@ -40,5 +40,13 @@ namespace ShowPat.Forms
                 return videoViewModels;
             }
         }
+
+        public Uri GetEmbedUri(VideoViewModel videoViewModel, bool autoPlay = true)
+        {
+            string uriString = "http://www.dailymotion.com/embed/video/" + videoViewModel.VideoID;
+            uriString += "&autoPlay=" + ((autoPlay) ? "1" : "0");
+            Uri uri = new Uri(uriString);
+            return uri;
+        }
     }
 }

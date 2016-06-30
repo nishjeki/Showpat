@@ -77,6 +77,8 @@ namespace ShowPat.Forms
         {
             if (Host == Host.YouTube)
                 return new YouTube().GetEmbedUri(this);
+            else if (Host == Host.DailyMotion)
+                return new DailyMotion().GetEmbedUri(this);
             else
                 throw new NotImplementedException();
         }
