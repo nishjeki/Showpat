@@ -75,11 +75,13 @@ namespace ShowPat.Forms
 
         internal Uri GetEmbedUri()
         {
-            if (Host == Host.YouTube)
-                return new YouTube().GetEmbedUri(this);
-            else if (Host == Host.DailyMotion)
-                return new DailyMotion().GetEmbedUri(this);
-            else
+			if (Host == Host.YouTube)
+				return new YouTube().GetEmbedUri(this);
+			else if (Host == Host.DailyMotion)
+				return new DailyMotion().GetEmbedUri(this);
+			else if (Host == Host.Vimeo)
+				return new Vimeo().GetEmbedUri(this);
+			else
                 throw new NotImplementedException();
         }
     }

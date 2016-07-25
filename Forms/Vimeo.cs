@@ -28,14 +28,23 @@ namespace ShowPat.Forms
 					VideoViewModel videoViewModel = new VideoViewModel();
 					dynamic title = video["name"];
 					videoViewModel.Title = title.Value;
-                    dynamic url = video["link"];
-                    videoViewModel.VideoID = url.Value;
+                    dynamic uri = video["uri"];
+					string videoID = uri.ToString().Replace("/videos/","");
+					videoViewModel.VideoID = videoID;
                     videoViewModel.Host = Host.Vimeo;
 					videoViewModels.Add(videoViewModel);
 				}
 
 				return videoViewModels;
 			}
+		}
+
+		internal Uri GetEmbedUri(VideoViewModel videoViewModel, bool autoPlay = true)
+		{
+			string uriString = "http://player.vimeo.com/video/" + videoViewModel.VideoID;
+			uriString += "?autoplay=" + ((autoPlay) ? "1" : "0");
+			Uri uri = new Uri(uriString);
+			return uri;
 		}
 	}
 }
