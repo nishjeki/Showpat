@@ -22,11 +22,42 @@ namespace ShowPat.Forms.UWP
     /// </summary>
     public sealed partial class MainPage
     {
+        MainPageViewModel _mainPageViewModel;
+
         public MainPage()
         {
             this.InitializeComponent();
 
-            LoadApplication(new ShowPat.Forms.App());
+            //LoadApplication(new ShowPat.Forms.UWP.App());
+
+            _mainPageViewModel = new MainPageViewModel();
+            this.DataContext = _mainPageViewModel;
+        }
+
+        private void asbSearch_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
+        {
+            Search();
+        }
+        
+        private void pivot_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Search();
+        }
+
+        private void Search()
+        {
+            if (string.IsNullOrWhiteSpace(_mainPageViewModel.SearchText))
+                return;
+
+            PivotItem piSelected = pivot.SelectedItem as PivotItem;
+            if (piSelected == piYouTube)
+                _mainPageViewModel.SearchYouTube();
+            else if (piSelected == piDailyMotion)
+                _mainPageViewModel.SearchDailyMotion();
+            else if (piSelected == piVimeo)
+                _mainPageViewModel.SearchVimeo();
+            else
+                throw new NotImplementedException();
         }
     }
 }

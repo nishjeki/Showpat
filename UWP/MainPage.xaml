@@ -1,4 +1,4 @@
-﻿<forms:WindowsPage
+﻿<Page
     x:Class="ShowPat.Forms.UWP.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -7,4 +7,49 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:forms="using:Xamarin.Forms.Platform.UWP"
     mc:Ignorable="d">
-</forms:WindowsPage>
+    <StackPanel>
+        <AutoSuggestBox x:Name="asbSearch" Text="{x:Bind _mainPageViewModel.SearchText, Mode=TwoWay}" QuerySubmitted="asbSearch_QuerySubmitted"/>
+        <Pivot x:Name="pivot" SelectionChanged="pivot_SelectionChanged">
+            <PivotItem Header="YouTube" x:Name="piYouTube">
+                <Grid>
+                    <ListView x:Name="lvYouTube" ItemsSource="{Binding Path=VideoViewModels}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Title}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </PivotItem>
+            <PivotItem Header="DailyMotion" x:Name="piDailyMotion">
+                <Grid>
+                    <!--TODO: make single listview template to be reused-->
+                    <ListView x:Name="lvDailyMotion" ItemsSource="{Binding Path=VideoViewModels}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Title}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </PivotItem>
+            <PivotItem Header="Vimeo" x:Name="piVimeo">
+                <Grid>
+                    <ListView x:Name="lvVimeo" ItemsSource="{Binding Path=VideoViewModels}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Title}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </PivotItem>
+        </Pivot>
+    </StackPanel>
+</Page>

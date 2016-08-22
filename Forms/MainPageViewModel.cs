@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 
 namespace ShowPat.Forms
 {
-    class MainPageViewModel : INotifyPropertyChanged
+    public class MainPageViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -34,7 +34,7 @@ namespace ShowPat.Forms
 			_videoViewModels = new ObservableCollection<VideoViewModel>();
         }
 
-		internal async void SearchYouTube()
+		public async void SearchYouTube()
 		{
 			_videoViewModels.Clear ();
 
@@ -46,7 +46,7 @@ namespace ShowPat.Forms
 			}
 		}
 
-        internal async void SearchDailyMotion()
+        public async void SearchDailyMotion()
         {
 			_videoViewModels.Clear ();
 			
@@ -58,7 +58,7 @@ namespace ShowPat.Forms
             }
         }
 
-		internal async void SearchVimeo()
+		public async void SearchVimeo()
 		{
 			_videoViewModels.Clear ();
 
