@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="40">
+    <dependencies>
+        <deployment version="2352" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--YouTube-->
+        <scene sceneID="47">
+            <objects>
+                <viewController id="42" customClass="VideosViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="35"/>
+                        <viewControllerLayoutGuide type="bottom" id="36"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="48">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="259">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="ofD-Va-2ps"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ofD-Va-2ps"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="28" y="20" width="320" height="44"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                </variation>
+                            </searchBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="atP-bl-bnZ" misplaced="YES">
+                                <rect key="frame" x="45" y="92" width="494" height="416"/>
+                                <collectionViewLayout key="collectionViewLayout" id="TRG-91-ywc" customClass="VideoCollectionViewFlowLayout"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="332" translatesAutoresizingMaskIntoConstraints="NO" customClass="VideoCollectionViewCell" reuseIdentifier="videoCollectionViewCell">
+                                        <rect key="frame" x="247" y="0.0" width="0.0" height="0.0"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="247" y="0.0" width="0.0" height="0.0"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <accessibility key="accessibilityConfiguration" label="YouTube"/>
+                        <constraints>
+                            <constraint firstItem="259" firstAttribute="top" secondItem="35" secondAttribute="bottom" id="325">
+                                <variation key="heightClass=regular-widthClass=compact" constant="1"/>
+                            </constraint>
+                            <constraint firstItem="259" firstAttribute="leading" secondItem="48" secondAttribute="leading" id="JIb-sT-JsA"/>
+                            <constraint firstItem="259" firstAttribute="width" secondItem="48" secondAttribute="width" id="RIt-55-ptT"/>
+                            <constraint firstItem="259" firstAttribute="top" secondItem="35" secondAttribute="bottom" id="SXV-ga-prI"/>
+                            <constraint firstItem="259" firstAttribute="top" secondItem="35" secondAttribute="bottom" id="bt4-Es-sL2"/>
+                            <constraint firstItem="259" firstAttribute="leading" secondItem="48" secondAttribute="leadingMargin" constant="-8" id="e8O-nb-HFz"/>
+                            <constraint id="411" firstItem="atP-bl-bnZ" firstAttribute="top" secondItem="259" secondAttribute="bottom"/>
+                            <constraint id="412" firstItem="atP-bl-bnZ" firstAttribute="leading" secondItem="48" secondAttribute="leading"/>
+                            <constraint id="413" firstItem="36" firstAttribute="top" secondItem="atP-bl-bnZ" secondAttribute="bottom"/>
+                            <constraint id="414" firstItem="48" firstAttribute="trailing" secondItem="atP-bl-bnZ" secondAttribute="trailing"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="325"/>
+                                <exclude reference="SXV-ga-prI"/>
+                                <exclude reference="e8O-nb-HFz"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="325"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="YouTube" id="49"/>
+                    <connections>
+                        <outlet property="sbYouTube" destination="259" id="name-outlet-259"/>
+                        <outlet property="searchDisplayController" destination="oz5-9k-0co" id="O5z-wA-3Py"/>
+                        <outlet property="videoCollectionView" destination="atP-bl-bnZ" id="name-outlet-atP-bl-bnZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="50" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="oz5-9k-0co">
+                    <connections>
+                        <outlet property="delegate" destination="42" id="MBn-8D-cva"/>
+                        <outlet property="searchContentsController" destination="42" id="VZp-K7-xW7"/>
+                        <outlet property="searchResultsDataSource" destination="42" id="J2k-Ih-9Xf"/>
+                        <outlet property="searchResultsDelegate" destination="42" id="RiQ-ab-FDJ"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="13398" y="5551"/>
+        </scene>
+        <!--DailyMotion-->
+        <scene sceneID="51">
+            <objects>
+                <viewController id="44" customClass="VideosViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="37"/>
+                        <viewControllerLayoutGuide type="bottom" id="38"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="52">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="GTX-of-PLc">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="600" id="Z5J-Oi-cBU"/>
+                                    <constraint firstAttribute="width" constant="600" id="b3L-zf-jPa"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Z5J-Oi-cBU"/>
+                                        <exclude reference="b3L-zf-jPa"/>
+                                    </mask>
+                                </variation>
+                            </searchBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="365" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <collectionViewLayout key="collectionViewLayout" id="367" customClass="VideoCollectionViewFlowLayout"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="366" customClass="VideoCollectionViewCell" reuseIdentifier="videoCollectionViewCell">
+                                        <rect key="frame" x="300" y="0.0" width="0.0" height="0.0"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="300" y="0.0" width="0.0" height="0.0"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <accessibility key="accessibilityConfiguration" label="DailyMotion"/>
+                        <constraints>
+                            <constraint firstItem="GTX-of-PLc" firstAttribute="top" secondItem="52" secondAttribute="top" id="2g9-BP-icp"/>
+                            <constraint firstAttribute="trailing" secondItem="GTX-of-PLc" secondAttribute="trailing" id="8er-wX-Kcs"/>
+                            <constraint firstItem="GTX-of-PLc" firstAttribute="top" secondItem="37" secondAttribute="bottom" id="Wuv-ah-WJS"/>
+                            <constraint firstItem="GTX-of-PLc" firstAttribute="leading" secondItem="52" secondAttribute="leading" id="ek1-c8-NGi"/>
+                            <constraint firstItem="GTX-of-PLc" firstAttribute="width" secondItem="52" secondAttribute="width" id="mtC-hi-eKt"/>
+                            <constraint firstItem="GTX-of-PLc" firstAttribute="leading" secondItem="52" secondAttribute="leading" id="nUe-rS-Yfu"/>
+                            <constraint id="368" firstItem="365" firstAttribute="top" secondItem="GTX-of-PLc" secondAttribute="bottom"/>
+                            <constraint id="369" firstItem="365" firstAttribute="leading" secondItem="52" secondAttribute="leading"/>
+                            <constraint id="374" firstItem="52" firstAttribute="trailing" secondItem="365" secondAttribute="trailing"/>
+                            <constraint id="375" firstItem="38" firstAttribute="top" secondItem="365" secondAttribute="bottom"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="2g9-BP-icp"/>
+                                <exclude reference="8er-wX-Kcs"/>
+                                <exclude reference="nUe-rS-Yfu"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="DailyMotion" id="53"/>
+                    <connections>
+                        <outlet property="sbDailyMotion" destination="GTX-of-PLc" id="name-outlet-GTX-of-PLc"/>
+                        <outlet property="videoCollectionView" destination="365" id="name-outlet-365"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="54" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="13402" y="6235"/>
+        </scene>
+        <!--Vimeo-->
+        <scene sceneID="68">
+            <objects>
+                <viewController id="69" customClass="VideosViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="66"/>
+                        <viewControllerLayoutGuide type="bottom" id="67"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="70">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="261">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="376" translatesAutoresizingMaskIntoConstraints="NO">
+                                <collectionViewLayout key="collectionViewLayout" id="398" customClass="VideoCollectionViewFlowLayout"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="377" reuseIdentifier="videoCollectionViewCell" customClass="VideoCollectionViewCell">
+                                        <rect key="frame" x="300" y="0.0" width="0.0" height="0.0"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="300" y="0.0" width="0.0" height="0.0"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <rect key="contentStretch" x="0.0" y="0.0" width="1" height="1"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="261" firstAttribute="top" secondItem="66" secondAttribute="bottom" constant="18" id="320">
+                                <variation key="heightClass=regular-widthClass=compact" constant="1"/>
+                            </constraint>
+                            <constraint firstItem="261" firstAttribute="leading" secondItem="70" secondAttribute="leading" constant="35" id="321">
+                                <variation key="heightClass=regular-widthClass=compact" constant="1"/>
+                            </constraint>
+                            <constraint firstAttribute="trailing" secondItem="261" secondAttribute="trailing" constant="20" id="322">
+                                <variation key="heightClass=regular-widthClass=compact" constant="1"/>
+                            </constraint>
+                            <constraint firstItem="261" firstAttribute="top" secondItem="66" secondAttribute="bottom" id="OUi-lN-jJ2"/>
+                            <constraint firstItem="261" firstAttribute="leading" secondItem="70" secondAttribute="leading" id="RCf-Eh-UKr"/>
+                            <constraint firstItem="261" firstAttribute="leading" secondItem="70" secondAttribute="leadingMargin" id="RJm-dL-UP1"/>
+                            <constraint firstItem="261" firstAttribute="top" secondItem="66" secondAttribute="bottom" id="T4h-vP-QUv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="261" secondAttribute="trailing" id="TiX-9o-yYe"/>
+                            <constraint firstItem="261" firstAttribute="width" secondItem="70" secondAttribute="width" id="euK-qe-i90"/>
+                            <constraint id="379" firstItem="376" firstAttribute="top" secondItem="261" secondAttribute="bottom"/>
+                            <constraint id="380" firstItem="376" firstAttribute="leading" secondItem="70" secondAttribute="leading"/>
+                            <constraint id="381" firstItem="70" firstAttribute="trailing" secondItem="376" secondAttribute="trailing"/>
+                            <constraint id="382" firstItem="67" firstAttribute="top" secondItem="376" secondAttribute="bottom"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="320"/>
+                                <exclude reference="321"/>
+                                <exclude reference="322"/>
+                                <exclude reference="RJm-dL-UP1"/>
+                                <exclude reference="T4h-vP-QUv"/>
+                                <exclude reference="TiX-9o-yYe"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="320"/>
+                                <include reference="321"/>
+                                <include reference="322"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Vimeo" id="76"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="sbVimeo" destination="261" id="name-outlet-261"/>
+                        <outlet property="videoCollectionView" destination="376" id="name-outlet-376"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="71" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="13399" y="6964"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="39">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="40" sceneMemberID="viewController">
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="45">
+                        <rect key="frame" x="0.0" y="551" width="600" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="42" kind="relationship" relationship="viewControllers" id="41"/>
+                        <segue destination="44" kind="relationship" relationship="viewControllers" id="43"/>
+                        <segue destination="69" kind="relationship" relationship="viewControllers" id="246"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="46" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="12581" y="5882"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="LaunchIcon.png" width="167" height="167"/>
+    </resources>
+</document>
