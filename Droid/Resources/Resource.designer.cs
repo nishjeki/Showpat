@@ -2375,6 +2375,9 @@ namespace ShowPat.Forms.Droid
 			// aapt resource value: 0x7f070038
 			public const int @fixed = 2131165240;
 			
+			// aapt resource value: 0x7f07009d
+			public const int gridView1 = 2131165341;
+			
 			// aapt resource value: 0x7f070005
 			public const int home = 2131165189;
 			
@@ -2636,18 +2639,6 @@ namespace ShowPat.Forms.Droid
 			// aapt resource value: 0x7f07000d
 			public const int tabMode = 2131165197;
 			
-			// aapt resource value: 0x7f07009c
-			public const int tableLayout1 = 2131165340;
-			
-			// aapt resource value: 0x7f07009d
-			public const int tableRow1 = 2131165341;
-			
-			// aapt resource value: 0x7f07009e
-			public const int tableRow2 = 2131165342;
-			
-			// aapt resource value: 0x7f07009f
-			public const int tableRow3 = 2131165343;
-			
 			// aapt resource value: 0x7f070099
 			public const int text = 2131165337;
 			
@@ -2656,6 +2647,9 @@ namespace ShowPat.Forms.Droid
 			
 			// aapt resource value: 0x7f07004d
 			public const int textSpacerNoButtons = 2131165261;
+			
+			// aapt resource value: 0x7f07009c
+			public const int textViewTitle = 2131165340;
 			
 			// aapt resource value: 0x7f070095
 			public const int time = 2131165333;
@@ -2940,7 +2934,10 @@ namespace ShowPat.Forms.Droid
 			public const int support_simple_spinner_dropdown_item = 2130903095;
 			
 			// aapt resource value: 0x7f030038
-			public const int VideoCollection = 2130903096;
+			public const int Video = 2130903096;
+			
+			// aapt resource value: 0x7f030039
+			public const int VideoCollection = 2130903097;
 			
 			static Layout()
 			{

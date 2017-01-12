@@ -28,5 +28,11 @@ namespace ShowPat.Forms.Droid
 			// Use this to return your custom view for this Fragment
 			return inflater.Inflate(Resource.Layout.VideoCollection, container, false);
 		}
+
+		public void SetAdapter(VideoCollectionAdapter videoCollectionAdapter)
+		{
+			GridView gridView = this.View.FindViewById<GridView>(Resource.Id.gridView1);
+			gridView.Adapter = videoCollectionAdapter;
+		}
 	}
 }
