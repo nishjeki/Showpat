@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<resources>
-<style name="DesignTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-  <item name="windowNoTitle">true</item>
-     <item name="windowActionBar">false</item></style>
-</resources>

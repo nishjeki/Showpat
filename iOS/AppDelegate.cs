@@ -8,19 +8,15 @@ using UIKit;
 namespace ShowPat.Forms.iOS
 {
 	[Register ("AppDelegate")]
-	public partial class AppDelegate : UIApplicationDelegate
+	public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
 	{
-		//Required for using storyboard
-		//Application output: The app delegate must implement the window property if it wants to use a main storyboard file.ß
-		public override UIWindow Window
-		{
-			get;
-			set;
-		}
-
 		public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 		{
-			return true;
+			global::Xamarin.Forms.Forms.Init ();
+
+			LoadApplication (new App ());
+
+			return base.FinishedLaunching (app, options);
 		}
 	}
 }
